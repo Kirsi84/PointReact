@@ -8,15 +8,14 @@ function Product(){
     // Create your own Mock API: https://mockapi.io/
    // const url = `https://5e9623dc5b19f10016b5e31f.mockapi.io/api/v1/products/${id}`
      
-    console.log("test x:", id)
-    
+       
     const url =  `http://localhost/point-product.php/?id=${id}`
     
-    console.log("test y:", url)
+    //console.log("test y:", url)
 
     let product = useAxiosGet(url)
 
-    console.log("test z:", product)
+  
     let content = null
 
     if(product.error){
@@ -36,7 +35,7 @@ function Product(){
    
 
     if(product.data){
-        console.log("test q:", product.data)
+      //  console.log("test q:", product.data)
 
         content = 
         <div>
@@ -50,7 +49,7 @@ function Product(){
                 />
             </div> */}
             <div className="font-bold text-xl mb-3">
-                $ {product.data.price}
+                €  {product.data.price}
             </div>
             <div>
                 {product.data.description}
