@@ -38,7 +38,7 @@ function Product(){
       //  console.log("test q:", product.data)
 
         content = 
-        <div>
+        <div className="max-w-screen-md mx-auto w-3/4  h-64 bg-white border-solid border-4 border-green-900">
             <h1 className="text-2xl font-bold mb-3">
                 {product.data.name}
             </h1>

@@ -69,7 +69,7 @@ function Home(){
 
     return (
         <div className="container mx-auto">
-            <h1 className="font-bold text-2xl mb-3">
+            <h1 className="font-bold text-2xl mb-3 text-white">
                 Tuotteet
             </h1>
             <div className="md:flex flex-wrap md:-mx-3">

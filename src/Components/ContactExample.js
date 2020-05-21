@@ -38,26 +38,27 @@ function ContactExample() {
       });
   };
   return (
-    <div>
-      <h1 class="text-xl">Ota yhteyttä:</h1>
+    <div className="max-w-screen-md mx-auto w-3/4">
+      <h1 className="text-xl text-white">Ota yhteyttä:</h1>
           <br></br>
       <form onSubmit={handleOnSubmit}>
 
-      <div class= "w-1/2">
-        <label class="block text-gray-800 text-xl font-bold mb-2" htmlFor="email">Sähköposti:</label>
-        <input class="shadow appearance-none w-full py-2 px-3 text-gray-900 leading-tight focus:outline-none focus:shadow-outline
+      <div>
+        <label className="block text-white text-xl font-bold mb-2" htmlFor="email">Sähköposti:</label>
+        <input className="shadow appearance-none w-full py-2 px-3
+          text-gray-900 leading-tight focus:outline-none focus:shadow-outline
           border-teal-700 p-4 border-2"
           id="email" type="email" name="email" required />
         </div>
         <br></br>
-        <br></br>
-
-        <div class= "w-1/2">
-          <label class="block text-gray-800 text-xl font-bold mb-2" htmlFor="message">Viesti:</label>
+        
+        <div>
+          <label className="block text-white text-xl font-bold mb-2" htmlFor="message">Viesti:</label>
           <textarea        
-            class="w-full shadow-inner p-4 border-2
-            border-teal-700 w-1/2  h-40" 
-            id="message" name="message">
+           className="h-64 shadow appearance-none w-full py-2 px-3
+           text-gray-900 leading-tight focus:outline-none focus:shadow-outline
+           border-teal-700 p-4 border-2 "
+           id="message" name="message">
           </textarea>
         </div>
 
@@ -65,8 +66,10 @@ function ContactExample() {
           <br></br>
 
           <button type="submit" disabled={serverState.submitting}
-            className="bg-blue-500 text-white p-2 flex justify-center 
-            w-1/2" >
+            // className="bg-blue-500 text-white p-2 flex justify-center  w-1/2" >
+            className="w-full bg-red-700 hover:bg-red-900 text-white font-bold py-2 px-4 border border-teal-700 rounde">
+
+           
             Lähetä
           </button>
 

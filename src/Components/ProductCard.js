@@ -13,7 +13,9 @@ function ProductCard(props){
                 >
                 </div>
             </Link> */}
-            <div className="p-3">
+            {/* <div className="p-3 bg-white"> */}
+            <div className="bg-white border-solid border-4 border-green-900">
+      
                 <h3 className="font-bold text-xl mb-3">
                     <Link to={`/products/${props.product.id}`}>
                         { props.product.name }
@@ -27,9 +29,9 @@ function ProductCard(props){
                 </div>
                 <Link 
                     to={`/products/${props.product.id}`}
-                    className="bg-blue-500 text-white p-2 flex justify-center w-full"
-                >
-                    View
+                    className="bg-red-700 hover:bg-red-900 text-white p-2 flex justify-center w-full">
+ 
+                    Lisätietoja
                 </Link>
             </div>
         </div>
