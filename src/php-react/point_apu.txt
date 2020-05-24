@@ -1,0 +1,14 @@
+Testiympäristö:
+
+http://localhost/point-products.php
+
+http://localhost/point-product.php?id=1
+
+http://localhost/point-upd-message.php
+
+Muista siirtää tuotantoon: point_dbcon_prod.php
+
+
+
+Muut:
+http://localhost/all-users.php

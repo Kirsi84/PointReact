@@ -15,21 +15,20 @@ function Home(){
 
    // console.log("test 2: products", products)
 
-   // const allUsers = products.map(data,error,loading) 
-   // const allUsers = products.map({id,createdAt,name, description, price}) 
-
-
-
+   
     let content = null
    // console.log("test B: ")
     if(products.error){
         content = <div>
             <div className="bg-blue-300 mb-2 p-3">
+                Virhe tietojen käsittelyssä. Kokeile hetken kuluttua uudelleen!
+            </div>
+            {/* <div className="bg-blue-300 mb-2 p-3">
                 If you see this error. Please remember to create your own <a href="https://mockapi.io/">mock API</a>.
             </div>
             <div className="bg-red-300 p-3">
                 There was an error please refresh or try again later.
-            </div>
+            </div> */}
         </div>
     }
 

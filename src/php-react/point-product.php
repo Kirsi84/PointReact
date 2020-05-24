@@ -1,0 +1,64 @@
+<?php
+header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Headers: access");
+header("Access-Control-Allow-Methods: GET");
+header("Content-Type: application/json; charset=UTF-8");
+header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
+
+$sourceinfo = "point-product.php: ";
+ 
+require 'point-dbcon.php';
+ 
+try  {
+
+    $db_conn = mysqli_connect($palvelin, $kayttaja, $salasana, $tietokanta);
+
+    if (mysqli_connect_errno()) {
+       
+        // Send error message to the server log if error connecting to the database
+        log_writing($sourceinfo . "Failed to connect to MySQL: " . mysqli_connect_error());
+        // show_user_error("Virhe tietokantakäsittelyssä. Kokeile hetken kuluttua uudelleen.");
+
+        // exit;
+    }
+    else {
+
+        if (isset($_GET["id"])) {
+
+            $id = (int)$_GET["id"];
+
+            $sql = "SELECT id, updated, name, description, price FROM products WHERE id =" . $id;
+            $result = mysqli_query($db_conn, $sql);
+            
+            if(mysqli_num_rows($result) > 0){
+    
+                $row = $result->fetch_object();
+                if ($row) {
+                    echo json_encode($row);
+                } else {
+                    echo '{}';
+                }
+            }
+            else{
+                echo json_encode(["success"=>0]);
+            }
+        }
+        else {
+            log_writing($sourceinfo . "input parameter missing");
+        }
+    }
+}
+catch(Exception $e) {
+    
+    log_writing($e->getMessage());
+    echo json_encode(["success"=>0]);
+   // show_user_error("Virhe tietokantakäsittelyssä. Kokeile hetken kuluttua uudelleen.");
+}
+
+finally {
+
+    mysqli_close($db_conn);
+    //log_writing($sourceinfo . "db connection closed");
+}
+?>
+ 
