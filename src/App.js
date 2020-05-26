@@ -8,9 +8,10 @@ import Header from './Components/Header'
 import Footer from './Components/Footer'
 import Home from './Views/Home'
 import About from './Views/About'
-import Counter from './Views/Counter'
 import Contact from './Views/Contact'
+import Message from './Views/Message'
 import Product from './Views/Product'
+import Error from './Views/Error'
 
 function App() {
   return (
@@ -24,18 +25,27 @@ function App() {
           <Route exact path="/">
             <Home />
           </Route>
+
           <Route path="/about">
             <About />
           </Route>
-          <Route path="/counter">
-            <Counter />
-          </Route>
+
           <Route path="/contact">
             <Contact />
           </Route>
+                  
+          <Route path="/message">
+            <Message />
+          </Route>
+
           <Route path="/products/:id">
             <Product />
           </Route>
+
+          <Route path="/error">
+            <Error />
+          </Route>
+
         </Switch>
         </div>
 

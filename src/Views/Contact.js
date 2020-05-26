@@ -1,12 +1,20 @@
 import React from 'react'
-import ContactExample from '../Components/ContactExample'
+
 
 function Contact(){
     return (
         <div>
-            <ContactExample />
-          
-        </div>
+        <h1 className="text-white font-bold text-2xl mb-3">Yhteystiedot</h1>
+
+        <p className="text-xl w-full bg-green-900 text-white text-center font-bold  border rounde">
+       
+            Touko Myllärin luomutila
+            <br></br>
+            Tähkätie 25
+            <br></br>
+            Puimala
+        </p>
+    </div>       
     )
 }
 

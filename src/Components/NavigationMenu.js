@@ -17,23 +17,15 @@ function NavigationMenu(props){
                         Tuotteet
                     </Link>
                 </li>
-                <li>
-                    <Link 
-                        to="/about" 
-                        className="text-blue-500 py-3 border-b block"
-                        onClick={props.closeMenu}
-                    >
-                        Tietoja
-                    </Link>
-                </li>
+             
 
                 <li>
                     <Link 
-                        to="/counter" 
+                        to="/message" 
                         className="text-blue-500 py-3 border-b block"
                         onClick={props.closeMenu}
                     >
-                        Counter
+                        Lähetä viesti
                     </Link>
                 </li>
 
@@ -46,6 +38,16 @@ function NavigationMenu(props){
                         Yhteystiedot
                     </Link>
                 </li>
+                <li>
+                    <Link 
+                        to="/about" 
+                        className="text-blue-500 py-3 border-b block"
+                        onClick={props.closeMenu}
+                    >
+                        Tietoja
+                    </Link>
+                </li>
+      
             </ul>
         </div>
     )

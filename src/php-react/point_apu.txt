@@ -10,5 +10,15 @@ Muista siirtää tuotantoon: point_dbcon_prod.php
 
 
 
+XAMP
+=====
+
+
+DocumentRoot "C:/xampp/htdocs/php-react"
+<Directory "C:/xampp/htdocs/php-react">
+
+
+
 Muut:
 http://localhost/all-users.php
+
