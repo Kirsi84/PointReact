@@ -5,8 +5,7 @@
     require 'point-dbcon-prod.php';
 
     // production
-    if (!$local )
-    //if ($local ) //simulating production
+    if (!$local )   
     {
         $palvelin = $prod_palvelin;
         $kayttaja = $prod_kayttaja;
@@ -15,9 +14,9 @@
         $tietokanta = "react_php_crud";
 
         // Turn off all error reporting
-        error_reporting(0); // in production not showing 
+        error_reporting(0); // in production not showing errors = 0
 
-        log_writing("Production: ");
+        log_writing("Product environment: ");
     }
 
     // test environment
@@ -27,9 +26,9 @@
         $salasana   = "";
         $tietokanta = "react_php_crud";
 
-        error_reporting(0); // just testing not to show errors in test environment
+        //error_reporting(0); // just testing not to show errors in test environment
         error_reporting(E_ALL);
-        log_writing("Test: ");
+        log_writing("Test environment: ");
     }
    
     // log_writin by UTC-time 

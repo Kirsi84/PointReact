@@ -17,14 +17,15 @@ try  {
        
         // Send error message to the server log if error connecting to the database
         log_writing($sourceinfo . "Failed to connect to MySQL: " . mysqli_connect_error());
-       //  show_user_error("Virhe tietokantakäsittelyssä. Kokeile hetken kuluttua uudelleen.");
+        makeErrReturnJson();
 
-        // exit;
+        exit;
     }
     else {
-        //   $_POST['message'] = "tesmessage4";           //just testing
-        //   $_POST['email'] = "test4@testi4.fi";         //just testing
-       
+         // $_POST['message'] = "Testataan tallennusta"; //just testing
+         // $_POST['email'] = "test@test.fi";            //just testing
+        // $_POST['email'] = "";                         //just testing
+         
         if  ((isset( $_POST['email'])) && (isset( $_POST['message']))) {
  
             $email          = trim(strip_tags( $_POST['email']));
@@ -60,30 +61,36 @@ try  {
                 
                 else
                 {
-                    echo json_encode(["success"=>0]);
+                    makeErrReturnJson();
                     log_writing($sourceinfo . "Error description: " . mysqli_error($con));
                 //  show_user_error("Virhe tietokantakäsittelyssä. Kokeile hetken kuluttua uudelleen.");
                 } 
             }
             else {
-                echo json_encode(["success"=>0]);
+                makeErrReturnJson();
             }
         } 
         else {
-            echo json_encode(["success"=>0]);
-        }      
+             makeErrReturnJson();
+        }
     }
 }
 catch(Exception $e) {
-    echo json_encode(["success"=>0]);
+   
     log_writing($e->getMessage());
+    makeErrReturnJson();
    // show_user_error("Virhe tietokantakäsittelyssä. Kokeile hetken kuluttua uudelleen.");
 }
 
 finally {
 
     mysqli_close($db_conn);
-    //log_writing($sourceinfo . "db connection closed");
+    log_writing($sourceinfo . "db connection closed");
+}
+
+// in error cases todo:
+function makeErrReturnJson() {       
+    echo json_encode(["success"=>0]);
 }
 ?>
  

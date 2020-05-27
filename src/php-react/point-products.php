@@ -1,6 +1,5 @@
 <?php
 header("Access-Control-Allow-Origin: *");
-
 header("Access-Control-Allow-Headers: access");
 header("Access-Control-Allow-Methods: GET");
 header("Content-Type: application/json; charset=UTF-8");
@@ -18,38 +17,40 @@ try  {
        
         // Send error message to the server log if error connecting to the database
         log_writing($sourceinfo . "Failed to connect to MySQL: " . mysqli_connect_error());
-      //  show_user_error("Virhe tietokantakäsittelyssä. Kokeile hetken kuluttua uudelleen.");
+        makeReturnJson();   
 
-        // exit;
+        exit;
     }
     else {
-
-       
+      
         $sql = "SELECT id, updated, name, description, price FROM products";
         $result = mysqli_query($db_conn, $sql);
-
-        if(mysqli_num_rows($result) > 0){
-        
+   
+        if ($result = mysqli_query($db_conn, $sql)) {
             $products = mysqli_fetch_all($result,MYSQLI_ASSOC);
-            echo json_encode($products);
-        
-            // echo json_encode(["success"=>1,"data"=>$all_users]);
+            echo json_encode($products);    
         }
-        else{
-            echo json_encode(["success"=>0]);
+        else{           
+            makeReturnJson();           
         }
     }
 }
 catch(Exception $e) {
     
     log_writing($e->getMessage());
-   // show_user_error("Virhe tietokantakäsittelyssä. Kokeile hetken kuluttua uudelleen.");
-}
+    makeReturnJson();       
+ } 
 
 finally {
 
     mysqli_close($db_conn);
     //log_writing($sourceinfo . "db connection closed");
 }
+
+// in error cases
+function makeReturnJson() {       
+    echo json_encode([]);
+}
+
 ?>
  

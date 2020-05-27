@@ -6,23 +6,23 @@ import { useAxiosGet } from '../Hooks/HttpRequests'
 import  { Redirect } from 'react-router-dom'
 
 function Home(){
-   
+  
     const url = `http://localhost/point-products.php`
-     
+    
     let products = useAxiosGet(url)
-     
+
     let content = null
   
     if(products.error){
-        content = <div>           
-            return <Redirect to='/error'  />           
+        content = <div>        
+            return <Redirect to='/error'  />         
         </div>
     }
 
     if(products.loading){
         content = <Loader></Loader>
     }
- 
+  
     if(products.data){
         content = 
         products.data.map((product) => 
@@ -33,6 +33,7 @@ function Home(){
             </div>
         )
     }
+ 
 
     return (
         <div className="container mx-auto">

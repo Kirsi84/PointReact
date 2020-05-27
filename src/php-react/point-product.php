@@ -17,9 +17,8 @@ try  {
        
         // Send error message to the server log if error connecting to the database
         log_writing($sourceinfo . "Failed to connect to MySQL: " . mysqli_connect_error());
-        // show_user_error("Virhe tietokantakäsittelyssä. Kokeile hetken kuluttua uudelleen.");
-
-        // exit;
+        makeReturnJson();    
+        exit; 
     }
     else {
 
@@ -28,30 +27,25 @@ try  {
             $id = (int)$_GET["id"];
 
             $sql = "SELECT id, updated, name, description, price FROM products WHERE id =" . $id;
-            $result = mysqli_query($db_conn, $sql);
-            
-            if(mysqli_num_rows($result) > 0){
-    
-                $row = $result->fetch_object();
-                if ($row) {
-                    echo json_encode($row);
-                } else {
-                    echo '{}';
-                }
+                      
+            if ($result = mysqli_query($db_conn, $sql)) {      
+                $row = $result->fetch_object();               
+                echo json_encode($row);
             }
             else{
-                echo json_encode(["success"=>0]);
+                makeReturnJson();  
             }
         }
         else {
             log_writing($sourceinfo . "input parameter missing");
+            makeReturnJson();  
         }
     }
 }
 catch(Exception $e) {
     
     log_writing($e->getMessage());
-    echo json_encode(["success"=>0]);
+    makeReturnJson();  
    // show_user_error("Virhe tietokantakäsittelyssä. Kokeile hetken kuluttua uudelleen.");
 }
 
@@ -60,5 +54,11 @@ finally {
     mysqli_close($db_conn);
     //log_writing($sourceinfo . "db connection closed");
 }
+
+// in error cases
+function makeReturnJson() {       
+    echo json_encode([]);
+}
+
 ?>
  
