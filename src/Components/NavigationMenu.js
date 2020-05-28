@@ -1,11 +1,19 @@
 import React from 'react'
 import { Link } from "react-router-dom"
+import kahvi from './kahvi.jpg';
 
 function NavigationMenu(props){
     return (
         <div>
             <div className="font-bold py-3">
-                PointApp
+                <div className="h-10 w-10">
+                    <img src={kahvi} alt="kahvi" />
+                </div>
+
+                <br></br>
+               
+                Myllärin luomutila
+ 
             </div>
             <ul>
                 <li>
@@ -15,6 +23,7 @@ function NavigationMenu(props){
                         onClick={props.closeMenu}
                     >
                         Tuotteet
+                       
                     </Link>
                 </li>
              

@@ -1,19 +1,30 @@
 import React from 'react'
+import mustatorvisieni from './mustatorvisieni.jpg'
 
 
 function Contact(){
     return (
-        <div>
-        <h1 className="text-white font-bold text-2xl mb-3">Yhteystiedot</h1>
+        <div className="py-24">
+            
+        <div className="text-xl h-48 bg-green-900 border-2 text-white w-1/2
+                content-center max-w-screen-md mx-auto w-3/4
+                px-16 py-6 text-center">
 
-        <p className="text-xl w-full bg-green-900 text-white text-center font-bold  border rounde">
-       
             Touko Myllärin luomutila
             <br></br>
             Tähkätie 25
             <br></br>
             Puimala
-        </p>
+            <br></br>
+            Puh. 040 - 123 456
+        </div>
+
+        <div className="h-80 bg-green-900 border-2 
+            content-center max-w-screen-md mx-auto w-3/4
+            px-16 py-6 text-center">
+            <img className="w-auto" src={mustatorvisieni} alt="mustatorvisieni" />
+        </div>      
+       
     </div>       
     )
 }

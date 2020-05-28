@@ -30,18 +30,26 @@ function Product(){
     if(product.data){
      
         content = 
-              
-        <div className="max-w-screen-md mx-auto w-3/4  h-64 bg-white border-solid border-4 border-green-900 p-6">
-            <h1 className="text-2xl font-bold mb-3">
-                {product.data.name}
-            </h1>
-            
-            <div className="font-bold text-xl mb-3">
-                €  {product.data.price}
-            </div>
+         
+        <div className="p-10">
+            <div className="max-w-screen-md mx-auto w-3/4  h-auto bg-white
+                    border-solid border-4 border-green-900 p-6">
 
-            <div>
-                {product.data.description}
+                <h1 className="text-2xl font-bold mb-3">
+                    {product.data.name}
+                </h1>
+                
+                <div className="font-bold text-xl mb-3">
+                    €  {product.data.price}
+                </div>
+
+                <div className="text-xl mb-3">
+                    {product.data.description}
+                </div>
+
+                <div className="text-xl mb-3">
+                    {product.data.information}
+                </div>
             </div>
         </div>
     }

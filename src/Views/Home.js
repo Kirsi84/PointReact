@@ -10,7 +10,6 @@ function Home(){
     const url = `http://localhost/point-products.php`
     
     let products = useAxiosGet(url)
-
     let content = null
   
     if(products.error){
@@ -26,14 +25,14 @@ function Home(){
     if(products.data){
         content = 
         products.data.map((product) => 
+            
             <div key={product.id} className="flex-no-shrink w-full md:w-1/4 md:px-3">
                 <ProductCard 
                     product={product}
                 />
-            </div>
+            </div>        
         )
-    }
- 
+    } 
 
     return (
         <div className="container mx-auto">

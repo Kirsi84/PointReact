@@ -26,7 +26,7 @@ try  {
 
             $id = (int)$_GET["id"];
 
-            $sql = "SELECT id, updated, name, description, price FROM products WHERE id =" . $id;
+            $sql = "SELECT id, updated, name, description, price, information FROM products WHERE id =" . $id;
                       
             if ($result = mysqli_query($db_conn, $sql)) {      
                 $row = $result->fetch_object();               
