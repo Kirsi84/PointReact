@@ -5,14 +5,14 @@ import kahvi from './kahvi.jpg';
 function NavigationMenu(props){
     return (
         <div>
-            <div className="font-bold py-3">
+            <div className="font-bold py-3 text-black">
                 <div className="h-10 w-10">
                     <img src={kahvi} alt="kahvi" />
                 </div>
 
                 <br></br>
                
-                Myllärin luomutila
+                Touko Myllärin luomutila
  
             </div>
             <ul>

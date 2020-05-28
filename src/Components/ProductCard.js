@@ -3,19 +3,9 @@ import {Link} from 'react-router-dom'
 
 function ProductCard(props){
     return (
-       
-        // <div className="border mb-4 rounded overflow-hidden p-6">
+         
         <div className="p-8">
-            {/* <Link to={`/products/${props.product.id}`}>
-                <div 
-                    style={{
-                        'backgroundImage': `url('${props.product.images[0].imageUrl}')`,
-                    }}
-                    className="w-full h-64 bg-blue bg-cover"
-                >
-                </div>
-            </Link> */}
-            {/* <div className="p-3 bg-white"> */}
+          
             <div className="bg-white border-solid border-4 border-green-900 p-6">
       
                 <h3 className="font-bold text-xl mb-3">

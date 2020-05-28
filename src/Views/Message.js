@@ -44,7 +44,7 @@ function Message() {
       
       })
       .catch(r => {
-        console.log("testpost5: ", r);
+        //console.log("test: ", r);
         const msg = "Virhe tietojen käsittelyssä. Kokeile hetken kuluttua uudelleen!"; 
         handleServerResponse(false, msg, form);
       });
@@ -86,8 +86,7 @@ function Message() {
           <div>         
 
             <button type="submit" disabled={serverState.submitting}
-              // className="bg-blue-500 text-white p-2 flex justify-center  w-1/2" >
-              className="w-full bg-red-700 hover:bg-red-900 text-white font-bold py-2 px-4 border border-teal-700 rounde">
+               className="w-full bg-red-700 hover:bg-red-900 text-white font-bold py-2 px-4 border border-teal-700 rounde">
             
               Lähetä
             </button>
