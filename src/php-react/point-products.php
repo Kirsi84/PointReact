@@ -24,7 +24,7 @@ try  {
     else {
       
         $sql = "SELECT id, updated, name, description, price FROM products";
-        $result = mysqli_query($db_conn, $sql);
+       // $result = mysqli_query($db_conn, $sql);
    
         if ($result = mysqli_query($db_conn, $sql)) {
             $products = mysqli_fetch_all($result,MYSQLI_ASSOC);
