@@ -8,14 +8,14 @@ function About(){
        
         <div className="py-24">
            
-            <div className="text-2xl h-40 bg-green-900 border-2 text-white
+            <div className="h-auto bg-green-900 border-2
+                text-white text-2xl
                 content-center max-w-screen-md mx-auto w-3/4
                 px-16 py-6 text-center">
                 React-PHP-MySql-tailwind harjoitustyö: versio 1.0
-               
             </div>
-           
-            <div className="h-80 bg-green-900 border-2 
+            
+            <div className="h-auto bg-green-900 border-2 
                 content-center max-w-screen-md mx-auto w-3/4
                 px-16 py-8">
     

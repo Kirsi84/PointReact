@@ -6,7 +6,7 @@ function Contact(){
     return (
         <div className="py-24">
             
-        <div className="text-xl h-48 bg-green-900 border-2 text-white w-1/2
+        <div className="text-xl h-auto bg-green-900 border-2 text-white w-1/2
                 content-center max-w-screen-md mx-auto w-3/4
                 px-16 py-6 text-center">
 
@@ -19,7 +19,7 @@ function Contact(){
             Puh. 040 - 123 456
         </div>
 
-        <div className="h-80 bg-green-900 border-2 
+        <div className="h-auto bg-green-900 border-2 
             content-center max-w-screen-md mx-auto w-3/4
             px-16 py-6 text-center">
             <img className="w-auto" src={mustatorvisieni} alt="mustatorvisieni" />

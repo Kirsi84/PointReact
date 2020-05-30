@@ -9,6 +9,8 @@ $sourceinfo = "point-products.php: ";
 
 require 'point-dbcon.php';
 
+log_writing($sourceinfo . "process starts");
+
 try  {
 
     $db_conn = mysqli_connect($palvelin, $kayttaja, $salasana, $tietokanta);
