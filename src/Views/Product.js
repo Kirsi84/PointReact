@@ -7,10 +7,14 @@ import  { Redirect } from 'react-router-dom'
 function Product(){
     const { id } = useParams()
     // Create your own Mock API: https://mockapi.io/
-   // const url = `https://5e9623dc5b19f10016b5e31f.mockapi.io/api/v1/products/${id}`
+    // const url = `https://5e9623dc5b19f10016b5e31f.mockapi.io/api/v1/products/${id}`
      
-       
+    //local todo:put into a configuration file  
     const url =  `http://localhost/point-product.php/?id=${id}`
+
+    //production todo:put into a configuration file  
+   // const url =  `https://kirsir.azurewebsites.net/point-product.php/?id=${id}`
+
     
     let product = useAxiosGet(url)
   

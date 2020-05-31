@@ -7,8 +7,12 @@ import  { Redirect } from 'react-router-dom'
 
 function Home(){
   
+    //local todo:put into a configuration file
     const url = `http://localhost/point-products.php`
     
+    //production todo:put into a configuration file
+   // const url = `https://kirsir.azurewebsites.net/point-products.php`
+
     let products = useAxiosGet(url)
     let content = null
   

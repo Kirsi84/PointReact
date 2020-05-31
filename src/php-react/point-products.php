@@ -12,7 +12,7 @@ require 'point-dbcon.php';
 log_writing($sourceinfo . "process starts");
 
 try  {
-
+    
     $db_conn = mysqli_connect($palvelin, $kayttaja, $salasana, $tietokanta);
 
     if (mysqli_connect_errno()) {
@@ -25,20 +25,26 @@ try  {
     }
     else {
       
+       
         $sql = "SELECT id, updated, name, description, price FROM products";
-       // $result = mysqli_query($db_conn, $sql);
-   
+    
         if ($result = mysqli_query($db_conn, $sql)) {
             $products = mysqli_fetch_all($result,MYSQLI_ASSOC);
-            echo json_encode($products);    
+           
+            echo json_encode($products); //todo: there is some error, this is 
+                                        //working in test but not in production
+            // makeReturnJson();     //testing todo: making empty json
+        
         }
-        else{           
+        else{   
+             
             makeReturnJson();           
         }
     }
 }
 catch(Exception $e) {
     
+    log_writing($sourceinfo . "Virhe: produts-tietojen haussa.");
     log_writing($e->getMessage());
     makeReturnJson();       
  } 
@@ -50,7 +56,8 @@ finally {
 }
 
 // in error cases
-function makeReturnJson() {       
+function makeReturnJson() {     
+    log_writing("Virhe tai tyhjä tulosjoukko!");  
     echo json_encode([]);
 }
 
