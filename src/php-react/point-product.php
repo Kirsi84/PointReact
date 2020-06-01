@@ -12,6 +12,7 @@ require 'point-dbcon.php';
 try  {
 
     $db_conn = mysqli_connect($palvelin, $kayttaja, $salasana, $tietokanta);
+    mysqli_set_charset($db_conn, 'utf8'); 
 
     if (mysqli_connect_errno()) {
        

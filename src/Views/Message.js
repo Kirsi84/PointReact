@@ -26,9 +26,15 @@ function Message() {
     const form = e.target;
     setServerState({ submitting: true });
   
+    //production todo:put into a configuration file  
+    //const url =  `https://kirsir.azurewebsites.net/point-upd-message.php`
+ 
+    //test environment todo: put into a configuration file  
+    const url = `http://localhost/point-upd-message.php`
+
     axios({
       method: "post",
-      url: "http://localhost/point-upd-message.php",
+      url: url,
       data: new FormData(form)
     })
       .then(r => {

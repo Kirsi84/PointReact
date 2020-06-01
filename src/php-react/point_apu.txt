@@ -3,6 +3,9 @@ Testiympäristö:
 
 http://localhost/point-products.php
 
+http://localhost/point-products-koe.php
+
+
 http://localhost/point-product.php?id=1
 
 http://localhost/point-upd-message.php

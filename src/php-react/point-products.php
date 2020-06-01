@@ -13,7 +13,8 @@ log_writing($sourceinfo . "process starts");
 
 try  {
     
-    $db_conn = mysqli_connect($palvelin, $kayttaja, $salasana, $tietokanta);
+    $db_conn = mysqli_connect($palvelin, $kayttaja, $salasana, $tietokanta);    
+    mysqli_set_charset($db_conn, 'utf8'); 
 
     if (mysqli_connect_errno()) {
        
@@ -24,20 +25,16 @@ try  {
         exit;
     }
     else {
-      
-       
+        
         $sql = "SELECT id, updated, name, description, price FROM products";
     
         if ($result = mysqli_query($db_conn, $sql)) {
             $products = mysqli_fetch_all($result,MYSQLI_ASSOC);
-           
-            echo json_encode($products); //todo: there is some error, this is 
-                                        //working in test but not in production
-            // makeReturnJson();     //testing todo: making empty json
-        
+          
+            echo json_encode($products);                                         
+            // makeReturnJson();     //testing: making empty json
         }
-        else{   
-             
+        else{  
             makeReturnJson();           
         }
     }
